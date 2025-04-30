@@ -14,9 +14,9 @@ pool:
 steps:
  
 - script: |
-    dotnet build HelloDotNet/HelloDotNet.csproj
+    dotnet build HelloDotNet.csproj
   displayName: 'Build HelloDotNet'
  
 - script: |
-    dotnet test HelloDotNet/HelloDotNet.csproj
+    dotnet test HelloDotNet.csproj
   displayName: 'Run Tests for HelloDotNet'
