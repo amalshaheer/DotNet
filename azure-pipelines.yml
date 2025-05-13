@@ -25,11 +25,11 @@ jobs:
     displayName: "Build, Test, Dockerize and Run"
 
     steps:
-      - script: dotnet build HelloWorldApp.csproj
+      - script: dotnet build HelloDotNet.csproj
 
         displayName: "Build .NET App"
 
-      - script: dotnet test HelloWorldApp.csproj
+      - script: dotnet test HelloDotNet.csproj
 
         displayName: "Test .NET App"
 
