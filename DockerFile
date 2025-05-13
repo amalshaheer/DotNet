@@ -5,9 +5,9 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /app
  
 # Copy the csproj and restore any dependencies (via nuget)
-#COPY HelloWorldApp/*.csproj ./HelloWorldApp/
-#RUN dotnet restore HelloWorldApp.csproj
-COPY HelloWorldApp.csproj ./
+#COPY HelloDotNet/*.csproj ./HelloDotNet/
+#RUN dotnet restore HelloDotNet.csproj
+COPY HelloDotNet.csproj ./
 RUN dotnet restore
  
  
@@ -15,7 +15,7 @@ RUN dotnet restore
 COPY . .
  
 # Build the app
-#RUN dotnet publish HelloWorldApp.csproj -c Release -o /app/publish
+#RUN dotnet publish HelloDotNet.csproj -c Release -o /app/publish
 RUN dotnet publish -c Release -o /app/publish
  
 # Generate the runtime image
@@ -24,4 +24,4 @@ WORKDIR /app
 COPY --from=build /app/publish .
  
 # Set the entry point for the application
-ENTRYPOINT ["dotnet", "HelloWorldApp.dll"]
+ENTRYPOINT ["dotnet", "HelloDotNet.dll"]
