@@ -42,7 +42,7 @@ jobs:
 
           repository: $(imageName)
 
-          Dockerfile: "**/dockerfile"
+          Dockerfile: "**/DockerFile"
 
           tags: |
 
