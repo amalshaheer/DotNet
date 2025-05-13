@@ -1,0 +1,15 @@
+D:\DotNet\HelloDotNet\bin\Debug\net8.0\HelloDotNet.exe
+D:\DotNet\HelloDotNet\bin\Debug\net8.0\HelloDotNet.deps.json
+D:\DotNet\HelloDotNet\bin\Debug\net8.0\HelloDotNet.runtimeconfig.json
+D:\DotNet\HelloDotNet\bin\Debug\net8.0\HelloDotNet.dll
+D:\DotNet\HelloDotNet\bin\Debug\net8.0\HelloDotNet.pdb
+D:\DotNet\HelloDotNet\obj\Debug\net8.0\HelloDotNet.GeneratedMSBuildEditorConfig.editorconfig
+D:\DotNet\HelloDotNet\obj\Debug\net8.0\HelloDotNet.AssemblyInfoInputs.cache
+D:\DotNet\HelloDotNet\obj\Debug\net8.0\HelloDotNet.AssemblyInfo.cs
+D:\DotNet\HelloDotNet\obj\Debug\net8.0\HelloDotNet.csproj.CoreCompileInputs.cache
+D:\DotNet\HelloDotNet\obj\Debug\net8.0\HelloDotNet.sourcelink.json
+D:\DotNet\HelloDotNet\obj\Debug\net8.0\HelloDotNet.dll
+D:\DotNet\HelloDotNet\obj\Debug\net8.0\refint\HelloDotNet.dll
+D:\DotNet\HelloDotNet\obj\Debug\net8.0\HelloDotNet.pdb
+D:\DotNet\HelloDotNet\obj\Debug\net8.0\HelloDotNet.genruntimeconfig.cache
+D:\DotNet\HelloDotNet\obj\Debug\net8.0\ref\HelloDotNet.dll

@@ -4,19 +4,66 @@
 # https://aka.ms/yaml
 
 trigger:
-  branches:
-    include:
-      - main
- 
+
+branches:
+  include:
+    - main
+
 pool:
-  name: DotNetPool
- 
-steps:
- 
-- script: |
-    dotnet build HelloDotNet.csproj
-  displayName: 'Build HelloDotNet'
- 
-- script: |
-    dotnet test HelloDotNet.csproj
-  displayName: 'Run Tests for HelloDotNet'
+  name: SelfHostedPool
+
+variables:
+  imageName: "helloworldapp"
+
+  containerName: "helloworldapp-container"
+
+  appPort: "8080"
+
+jobs:
+  - job: BuildTestAndDockerize
+
+    displayName: "Build, Test, Dockerize and Run"
+
+    steps:
+      - script: dotnet build HelloWorldApp.csproj
+
+        displayName: "Build .NET App"
+
+      - script: dotnet test HelloWorldApp.csproj
+
+        displayName: "Test .NET App"
+
+      - task: Docker@2
+
+        displayName: "Build Docker Image"
+
+        inputs:
+          command: build
+
+          repository: $(imageName)
+
+          Dockerfile: "**/dockerfile"
+
+          tags: |
+
+            latest
+
+          buildContext: $(Build.SourcesDirectory)
+
+      - script: |
+
+          docker rm -f $(containerName) || true
+
+        displayName: "Remove existing container if it exists"
+
+      - script: |
+
+          echo "Running Docker container."
+
+          docker run -d -p $(appPort):$(appPort) --name $(containerName) $(imageName):latest
+
+        displayName: "Run Docker Container"
+
+      - script: docker logs $(containerName)
+
+        displayName: "View Docker Container Logs"
