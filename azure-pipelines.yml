@@ -10,7 +10,7 @@ trigger:
     - main
 
 pool:
-  name: SelfHostedPool
+  name: 'ubuntu-latest'
 
 variables:
   imageName: "helloworldapp"
